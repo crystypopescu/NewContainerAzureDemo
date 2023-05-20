@@ -9,4 +9,12 @@ services:
       context: .
       dockerfile: ./Dockerfile
     ports:
-      - 5173:5173
+      - 80:80
+  db:
+      image: mcr.microsoft.com/mssql/server:latest
+      environment:
+        SA_PASSWORD: bibiga73S!   # Set your desired SQL Server SA password
+        ACCEPT_EULA: Y                   # Accept the SQL Server EULA
+      ports:
+        - 1435:1433                      # Port mapping for accessing the database server
+      
